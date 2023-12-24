@@ -13,4 +13,3 @@ Static data members are class members that are declared using static keywords. A
 - Static members are only declared in a class declaration, not defined. They must be explicitly defined outside the class using the scope resolution operator.
 
 - Static data members can only be defined globally in C++. The only exception to this are static const data members of integral type which can be initialized in the class declaration.
-- 
