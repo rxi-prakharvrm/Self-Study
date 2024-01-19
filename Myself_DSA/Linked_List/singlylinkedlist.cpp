@@ -42,6 +42,12 @@ class SinglyLinkedList {
 
     // void deleteNode(int);
 
+    // nth node from the end of the list
+    void nthNodeFromEnd(void);
+
+    // reverse the list
+    void reverseList(void);
+
 };
 
 void SinglyLinkedList::insertAtEnd(int data) {
@@ -181,19 +187,88 @@ void SinglyLinkedList::deleteFromPos(int  pos) {
 
 // Printing the list
 void SinglyLinkedList::printList() {
-    Node* temp = head;
+    Node *temp = head;
 
     if(head == NULL) {
         cout << "Empty List!" << endl;
         return;
     }
 
+    cout << "head->";
     while(temp != NULL) {
         cout << temp->data << "->";
         temp = temp->next;
     }
     cout << "NULL";
 };
+
+// nth node from the end of the list (size-n+1)th node from the start
+void SinglyLinkedList::nthNodeFromEnd() {
+    if(head == NULL) {
+        cout << "List is empty!";
+        return;
+    }
+
+    int n, size = 1;
+    Node *temp1 = head;
+
+    cout << "Enter the value of n: ";
+    cin >> n;
+
+    while(temp1->next != NULL) {
+        temp1 = temp1->next;
+        size++;
+    }
+
+    if(size < n) {
+        cout << "Fewer number of nodes in the list!" << endl;
+        return;
+    }
+
+    Node *temp2 = head;
+    while((size-n+1) != 1) {
+        temp2 = temp2->next;
+        size--;
+    }
+
+    cout << n << "th element from the end of the list is: " << head->data << endl;
+}
+
+// Reverse list
+void SinglyLinkedList::reverseList() {
+    // Handling empty list and single node in the list
+    if(head == NULL || head->next == NULL) {
+        cout << "Nothing to reverse!" << endl;
+        return;
+    }
+
+    // Handling two nodes in the list
+    if(head->next->next == NULL) {
+        Node *temp = head;
+        head = temp->next;
+        head->next = temp;
+        temp->next = NULL;
+        return;
+    }
+
+    // Handling three or more than three nodes
+    Node *before, *current, *after;
+
+    before = head;
+    current = before->next;
+    after = NULL;
+
+    while(current != NULL) {
+        if(before == head) {
+            before->next = NULL;
+        }
+        current->next = before;
+        before = current;
+        current = after;
+        if(after) after = after->next;
+    }
+    head = before;
+}
 
 // driver code
 int main() {
@@ -202,18 +277,25 @@ int main() {
     LL.insertAtEnd(2);
     LL.insertAtEnd(3);
     LL.insertAtEnd(4);
+    LL.insertAtEnd(5);
 
     // LL.insertAtBeginning(14);
 
-    LL.insertAtPos(15, 5);
+    LL.insertAtPos(15, 6);
     // LL.insertAtPos(23, 7);
 
     // LL.deleteNode();
 
     // LL.deleteFromBeginning();
 
-    LL.deleteFromPos(5);
+    LL.deleteFromPos(3);
 
     LL.printList();
+    cout << endl;
+    LL.reverseList();
+    cout << endl;
+    LL.printList();
+    cout << endl;
+    // LL.nthNodeFromEnd();
     return 0;
 }

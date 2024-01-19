@@ -39,7 +39,7 @@ class Tree {
 };
 
 void Tree::createTree(Node *&root) {
-    Node *p, *t;
+    Node *currentNode, *newNode;
     int x;
     queue<Node *> q;
     
@@ -54,7 +54,7 @@ void Tree::createTree(Node *&root) {
     while(!q.empty()) {
 
         // dequeue
-        p = q.front();
+        currentNode = q.front();
         q.pop();
 
         // creating left child
@@ -62,9 +62,9 @@ void Tree::createTree(Node *&root) {
         cin >> x;
 
         if(x != -1) {
-            t = new Node(x);
-            p->left = t;
-            q.push(t);
+            newNode = new Node(x);
+            currentNode->left = newNode;
+            q.push(newNode);
         }
 
         // creating right child
@@ -72,9 +72,9 @@ void Tree::createTree(Node *&root) {
         cin >> x;
 
         if(x != -1) {
-            t = new Node(x);
-            p->right = t;
-            q.push(t);
+            newNode = new Node(x);
+            currentNode->right = newNode;
+            q.push(newNode);
         }
     }
 }
