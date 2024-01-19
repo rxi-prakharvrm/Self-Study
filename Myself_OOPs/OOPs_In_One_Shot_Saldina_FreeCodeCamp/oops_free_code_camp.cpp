@@ -62,7 +62,7 @@ class Employee:AbstractEmployee {
         }
     }
 
-    void work() {
+    virtual void work() {
         cout << name << " is checking email, task backlog, performing tasks etc" << endl;
     }
 };
