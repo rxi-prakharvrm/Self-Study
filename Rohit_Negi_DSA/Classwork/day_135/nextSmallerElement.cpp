@@ -20,7 +20,8 @@ class Solution {
 };
 
 int main() {
-    vector<long long> arr = {7, 9, 12, 10, 14, 8, 3, 6, 9};
+    vector<long long> arr = {2, 3, 4, 2, 6, 5, 4, 5, 3};
+    // vector<long long> arr = {7, 9, 12, 10, 14, 8, 3, 6, 9};
     Solution S;
     vector<long long> ans = S.nextSmallerElement(arr, arr.size());
     for(int i = 0; i < ans.size(); i++) {
