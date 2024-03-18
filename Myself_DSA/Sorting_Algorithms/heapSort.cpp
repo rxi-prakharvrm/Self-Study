@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// O(log (n))
 void heapify(vector<int> &arr, int n, int i) {
     int largest = i;
     int left = 2 * i + 1;
@@ -21,25 +20,19 @@ void heapify(vector<int> &arr, int n, int i) {
     }
 }
 
-// O(n log (n))
-void buildHeap(vector<int> &arr, int n) {
-    for(int i = n / 2 - 1; i >= 0; i--) {
-        heapify(arr, n, i); // O(log (n))
-    }
-}
-
-// O(n log (n))
 void heapSort(vector<int> &arr, int n) {
-    buildHeap(arr, n); // O(n log(n))
+    for(int i = n / 2 - 1; i >= 0; i--) {
+        heapify(arr, n, i);
+    }
 
-    for(int i = n - 1; i > 0; i--) { // O(n)
+    for(int i = n - 1; i > 0; i--) {
         swap(arr[0], arr[i]);
-        heapify(arr, i, 0); // O(log (n))
+        heapify(arr, i, 0);
     }
 }
 
 int main() {
-    vector<int> arr = {5, 7, 2, 6, 1, 8};
+    vector<int> arr = {5, 4, 2, 6, 3};
     int n = arr.size();
 
     heapSort(arr, n);

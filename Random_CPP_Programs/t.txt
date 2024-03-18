@@ -1,0 +1,44 @@
+Absolutely! Here's a selection of questions covering the mentioned topics:
+
+### Searching:
+1. **Linear Search**:
+   - Explain the working principle of the linear search algorithm. What is its time complexity for finding an element in an array of size \( n \)?
+   - Compare and contrast linear search with binary search. In what scenarios is linear search preferred over binary search?
+
+2. **Binary Search**:
+   - Describe the binary search algorithm. What are its preconditions for successful execution, and what is its time complexity?
+   - Discuss how binary search can be implemented iteratively and recursively. Provide code examples for both approaches.
+
+### Sorting:
+3. **Sorting Algorithms**:
+   - Compare the time complexities of various sorting algorithms such as selection sort, insertion sort, quick sort, merge sort, and radix sort. Which algorithm would you choose for sorting a large dataset and why?
+   - Explain the working principle of bucket sort. How does it achieve linear time complexity in certain scenarios?
+
+### Time and Space Complexity:
+4. **Time Complexity**:
+   - Define time complexity and explain how it is calculated for algorithms. Provide examples to demonstrate how to determine the time complexity of iterative and recursive algorithms.
+   - Discuss the significance of the "Big O" notation in analyzing algorithm efficiency. How does it help in comparing algorithms?
+
+5. **Space Complexity**:
+   - Define space complexity and explain its importance in algorithm analysis. How is space complexity different from time complexity?
+   - Analyze the space complexity of popular sorting algorithms like merge sort and quick sort. Which sorting algorithm has the highest space complexity, and why?
+
+### Recurrence Relations and Master Theorem:
+6. **Recurrence Relations**:
+   - Define recurrence relations in the context of algorithm analysis. Provide examples of recurrence relations and explain how to solve them using iteration and recursion.
+   - Derive the recurrence relation for the time complexity of the merge sort algorithm. Solve the recurrence relation using the Master Theorem.
+
+7. **Master Theorem**:
+   - State the Master Theorem and explain its significance in analyzing the time complexity of divide-and-conquer algorithms.
+   - Apply the Master Theorem to analyze the time complexity of algorithms like quick sort and binary search.
+
+### Interval Scheduling and Interval Partitioning:
+8. **Interval Scheduling**:
+   - Define the interval scheduling problem. How is it different from traditional scheduling problems?
+   - Describe the greedy algorithm for interval scheduling. Provide an example to illustrate its application.
+
+9. **Interval Partitioning**:
+   - Explain the interval partitioning problem. How does it relate to interval scheduling?
+   - Discuss how to solve the interval partitioning problem using greedy algorithms. Provide an example to demonstrate the algorithm's application.
+
+These questions cover a range of topics in the design and analysis of algorithms, providing a comprehensive understanding for university exams. Adjust the complexity of the questions based on the level of the course and students' familiarity with the topics.
