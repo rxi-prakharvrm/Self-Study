@@ -3,7 +3,7 @@
 using namespace std;
 
 int partition(vector<int> &arr, int start, int end) {
-    int pivot = start;
+    int pivot = end;
     int i = start;
     int j = end;
 
@@ -21,8 +21,8 @@ int partition(vector<int> &arr, int start, int end) {
         }
     }
 
-    swap(arr[pivot], arr[j]);
-    pivot = j;
+    swap(arr[pivot], arr[i]);
+    pivot = i;
 
     return pivot;
 }

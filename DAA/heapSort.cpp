@@ -39,7 +39,7 @@ void heapSort(vector<int> &arr, int n) {
 }
 
 int main() {
-    vector<int> arr = {5, 7, 2, 6, 1, 8};
+    vector<int> arr = {5, 7, 2, 6, 1, 8, 1, 93, 5, 4, 22};
     int n = arr.size();
 
     heapSort(arr, n);
