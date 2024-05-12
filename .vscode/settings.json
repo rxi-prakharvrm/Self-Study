@@ -2,6 +2,7 @@
     "files.associations": {
         "*.ejs": "html",
         "*.md": "markdown",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "utility": "cpp"
     }
 }
