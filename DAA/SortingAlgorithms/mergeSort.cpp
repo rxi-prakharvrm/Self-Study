@@ -18,16 +18,19 @@ void merge(vector<int> &arr, int start, int mid, int end) {
         }
     }
 
+    // add the remaining element of array[i] to temp
     while(i <= mid) {
         temp.push_back(arr[i]);
         i++;
     }
-    
+
+    // add the remaining element of array[j] to temp
     while(j <= end) {
         temp.push_back(arr[j]);
         j++;
     }
 
+    // assign the temp value in the original array
     for(int i = start; i <= end; i++) {
         arr[i] = temp[i-start];
     }
