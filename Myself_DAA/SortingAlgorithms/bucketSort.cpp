@@ -1,5 +1,4 @@
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 // Insertion sort function to sort individual buckets
@@ -42,7 +41,8 @@ void bucketSort(float arr[], int n) {
 
 // Driver program to test above function
 int main() {
-    float arr[] = {0.897, 0.565, 0.656, 0.1234, 0.665, 0.3434};
+    // float arr[] = {0.897, 0.165, 0.656, 0.1234, 0.665, 0.3434};
+    float arr[] = {0.1, 0.12, 0.11, 0.01};
     int n = sizeof(arr) / sizeof(arr[0]);
     bucketSort(arr, n);
 

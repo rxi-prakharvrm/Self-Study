@@ -21,3 +21,6 @@ bin/
 
 # Unignore all `.exe` in `bin` dir
 !*/bin/*.exe
+
+# Ignore 'tempCodeRunnerFile.cpp' file
+tempCodeRunnerFile.cpp

@@ -11,7 +11,7 @@ int partition(vector<int> &arr, int start, int end) {
         while(i <= j && arr[i] <= arr[pivot]) {
             i++;
         }
-        while(j >= start && arr[j] > arr[pivot]) {
+        while(i <= j && arr[j] > arr[pivot]) {
             j--;
         }
         if(i < j) {
@@ -28,7 +28,7 @@ int partition(vector<int> &arr, int start, int end) {
 }
 
 void quickSort(vector<int> &arr, int start, int end) {
-    if(start < end) { // Changed to start < end
+    if(start < end) {
         int index = partition(arr, start, end);
         quickSort(arr, start, index - 1);
         quickSort(arr, index + 1, end);
@@ -36,7 +36,8 @@ void quickSort(vector<int> &arr, int start, int end) {
 }
 
 int main() {
-    vector<int> arr = {5, -1, 2, 10, 99, 3, 67, -98};
+    // vector<int> arr = {5, -1, 2, 10, 99, 3, 67, -98};
+    vector<int> arr = {1, 2, 3, 4, 5};
     int n = arr.size();
     quickSort(arr, 0, n - 1);
 
