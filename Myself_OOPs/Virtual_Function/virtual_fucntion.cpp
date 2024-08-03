@@ -3,7 +3,7 @@ using namespace std;
 
 class Base {
 public:
-    void print() {
+    virtual void print() {
         cout << "Base class" << endl;
     }
 };
