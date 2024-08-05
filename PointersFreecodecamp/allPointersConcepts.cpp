@@ -85,6 +85,12 @@ int main() {
     cout << ***C << endl;
 
     // Character pointers
+    const char *str = "Hello"; // immutable string
+
+    cout << endl << "Values in character pointers - " << endl;
+    cout << str << endl;
+    cout << &*str << endl;
+    cout << &str[0] << endl;
 
     // Experiment time (Guess the output?)
     cout << endl << "Experiment time - " << endl;
