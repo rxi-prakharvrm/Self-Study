@@ -6,7 +6,7 @@ Conditions responsible for creating errors during the execution of a program are
 
 ## Exception Handling in C++
 
-Exception handling in C++ consist of three keywords: try, ```throw``` and ```catch```:
+Exception handling in C++ consist of three keywords: ```try```, ```throw``` and ```catch```:
 
 The ```try``` statement allows you to define a block of code to be tested for errors while it is being executed.
 
