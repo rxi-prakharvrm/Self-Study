@@ -10,5 +10,3 @@ int main() {
     printf("%d\n", strlen(str2));
     return 0;
 }
-
-// ;
