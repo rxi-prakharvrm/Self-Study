@@ -4,5 +4,6 @@
         "*.md": "markdown",
         "ostream": "cpp",
         "utility": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
