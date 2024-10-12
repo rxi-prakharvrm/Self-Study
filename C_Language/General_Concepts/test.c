@@ -59,11 +59,14 @@ int main() {
     //strcat(greet, name);
     //printf("%s\n", greet);
 
-    char arr1[100] = {'a', 'b'};
-    char arr2[100] = {'c', 'd'};
-    printf("%d\n", strlen(arr1));
-    strcat(arr1, arr2);
-    printf("%d\n", strlen(arr1));
+    // char arr1[100] = {'a', 'b'};
+    // char arr2[100] = {'c', 'd'};
+    // printf("%d\n", strlen(arr1));
+    // strcat(arr1, arr2);
+    // printf("%d\n", strlen(arr1));
+
+    int x = 10;
+    printf("%s", x);
 
     return 0;
 }

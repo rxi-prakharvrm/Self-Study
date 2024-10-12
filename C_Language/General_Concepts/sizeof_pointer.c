@@ -6,7 +6,9 @@ struct s {
 } obj;
 
 int main() {
+	struct s *p = NULL;
 	printf("%d\n", sizeof(obj));
+	printf("%d\n", sizeof(p));
 	return 0;
 }
 

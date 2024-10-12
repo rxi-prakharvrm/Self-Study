@@ -1,3 +1,3 @@
-static void greet() {
+void greet() {
     printf("Hello, this is another file");
 }
