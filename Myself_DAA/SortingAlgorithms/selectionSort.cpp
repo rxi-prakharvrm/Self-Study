@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+<<<<<<< HEAD
+=======
+// ============= alternate way ================
+>>>>>>> f2fab54a1113b908bf24fdf5d2f18003b54f2ed8
 // void selectionSort(vector<int> &arr, int n) {
 //     for(int i = 0; i < n-1; i++) {
 //         for(int j = i+1; j < n; j++) {
@@ -12,6 +16,7 @@ using namespace std;
 // }
 
 void selectionSort(vector<int> &arr, int n) {
+<<<<<<< HEAD
     for(int i=0; i<n; i++){
         int min=arr[i];
         int minIdx=i;
@@ -22,6 +27,16 @@ void selectionSort(vector<int> &arr, int n) {
             }
         }
         swap(arr[i],arr[minIdx]);
+=======
+    for(int i = 0; i < n-1; i++) {
+        int minIndex = i;
+        for(int j = i+1; j < n; j++) {
+            if(arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        swap(arr[i], arr[minIndex]);
+>>>>>>> f2fab54a1113b908bf24fdf5d2f18003b54f2ed8
     }
 }
 

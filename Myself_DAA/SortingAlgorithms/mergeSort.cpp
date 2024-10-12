@@ -2,60 +2,54 @@
 using namespace std;
 
 void merge(vector<int> &arr, int start, int mid, int end) {
-    int i = start;
-    int j = mid + 1;
     vector<int> temp;
+    int i = start, j = mid + 1;
 
-    while(i <= mid && j <= end) {
-        if(arr[i] < arr[j]) {
+    // Merge two sorted subarrays
+    while (i <= mid && j <= end) {
+        if (arr[i] < arr[j]) {
             temp.push_back(arr[i]);
             i++;
-        }
-
-        else {
+        } else {
             temp.push_back(arr[j]);
             j++;
         }
     }
 
-    // add the remaining element of array[i] to temp
-    while(i <= mid) {
+    // If there are leftover elements in the first half
+    while (i <= mid) {
         temp.push_back(arr[i]);
         i++;
     }
 
-    // add the remaining element of array[j] to temp
-    while(j <= end) {
+    // If there are leftover elements in the second half
+    while (j <= end) {
         temp.push_back(arr[j]);
         j++;
     }
 
-    // assign the temp value in the original array
-    for(int i = start; i <= end; i++) {
-        arr[i] = temp[i-start];
+    // Copy the sorted subarray back into the original array
+    for (int k = 0; k < temp.size(); k++) {
+        arr[start + k] = temp[k];
     }
 }
 
 void mergeSort(vector<int> &arr, int start, int end) {
-    if(start < end) {
-        int mid = start + (end - start) / 2;
-
-        mergeSort(arr, start, mid);
-        mergeSort(arr, mid + 1, end);
-
-        merge(arr, start, mid, end);
-    }
+    if (start >= end) return;
+    int mid = start + (end - start) / 2;
+    mergeSort(arr, start, mid);
+    mergeSort(arr, mid + 1, end);
+    merge(arr, start, mid, end);
 }
 
-int main() {    
-    vector<int> arr = {5, 2, 17, -3, 4, 8, 23};
+int main() {
+    vector<int> arr = {5, 2, 8, 1, 0, 10, -1, 100};
     int n = arr.size();
-    mergeSort(arr, 0, n-1);
-
-    for(int i = 0; i < n; i++) {
+    mergeSort(arr, 0, n - 1);
+    
+    // Print the sorted array
+    for (int i = 0; i < n; i++) {
         cout << arr[i] << " ";
     }
-    cout << endl;
-    
     return 0;
 }
