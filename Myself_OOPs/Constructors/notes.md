@@ -24,7 +24,7 @@
 
 - Even if we do not define any constructor explicitly, the compiler will automatically provide a default constructor implicitly.
 
-- When an object is declared in a parameterized constructor, the initial values have to be passed as arguments to the constructor function. The normal way of object declaration may not work. The constructors can be called explicitly or implicitly.\
+- When an object is declared in a parameterized constructor, the initial values have to be passed as arguments to the constructor function. The normal way of object declaration may not work. The constructors can be called explicitly or implicitly.
 
 ```cpp
 Example e = Example(0, 50); // Explicit call

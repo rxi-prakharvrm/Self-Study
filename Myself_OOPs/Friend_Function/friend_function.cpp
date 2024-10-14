@@ -3,18 +3,20 @@ using namespace std;
 
 class Rectangle {
     int height, width;
-public:
+
+    public:
     void setdata(int h, int w) {
         height = h;
         width = w;
     }
+
     friend void printdata(Rectangle s);
 };
 
 void printdata(Rectangle s) {
     cout << "Height is: " << s.height << endl;
     cout << "Width is: " << s.width << endl;
-    cout << "Area of Rectangle is: " << s.height*s.width;
+    cout << "Area of Rectangle is: " << s.height * s.width;
 }
 
 int main() {
