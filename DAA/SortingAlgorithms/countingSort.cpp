@@ -1,50 +1,49 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int getMax(vector<int> arr, int n) {
+int getMax(vector<int> &arr, int n) {
     int mx = arr[0];
-
-    for(int i = 0; i < n; i++) {
-        mx = max(mx, arr[i]);
+    for(int i = 1; i < n; i++) {
+        if(arr[i] > mx) mx = arr[i];
     }
-
-    return mx;
+    return mx+1;
 }
 
 vector<int> countingSort(vector<int> &arr, int range, int n) {
-    vector<int> freq(range, 0);
-    vector<int> cummulativeSum(range, 0);
-    vector<int> output(n, -1);
-
-    for(int i = 0; i < n; i++) {
-        freq[arr[i]]++;
-    }
     
-    cummulativeSum[0] = freq[0];
+    vector<int> freqArray(range, 0);
+    vector<int> cummulativeArray(range, 0);
+    vector<int> outputArray(n);
+
+    // Count frequency
+    for(int i = 0; i < n; i++) {
+        freqArray[arr[i]]++;
+    }
+
+    // Calculate cummulative frequency
+    cummulativeArray[0] = freqArray[0];
     for(int i = 1; i < range; i++) {
-        cummulativeSum[i] = cummulativeSum[i-1] + freq[i];
+        cummulativeArray[i] = cummulativeArray[i-1] + freqArray[i];
     }
 
+    // form output array
     for(int i = n-1; i >= 0; i--) {
-        output[cummulativeSum[arr[i]]-1] = arr[i];
-        cummulativeSum[arr[i]]--;
+        outputArray[cummulativeArray[arr[i]]-1] = arr[i];
+        cummulativeArray[arr[i]]--;
     }
 
-    return output;
+    return outputArray;
 }
 
 int main() {
-    // bucket sort is only applicable on fixed range of numbers in an array
-    // here the range is 0-9
-    // vector<int> arr = {3, 2, 1, 1, 8, 2, 3, 0, 9};
-    vector<int> arr = {3, 0, 0, 1, 2, 3};
-    int range = getMax(arr, arr.size()) + 1;
+    vector<int> arr = {2, 5, 3, 0, 2, 3, 0, 3};
     int n = arr.size();
-
+    int range = getMax(arr, n);
     vector<int> output = countingSort(arr, range, n);
-
-    for(int i = 0; i < output.size(); i++) {
+    
+    for(int i = 0; i < n; i++) {
         cout << output[i] << " ";
     }
+    
     return 0;
 }

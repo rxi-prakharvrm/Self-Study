@@ -1,13 +1,42 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+<<<<<<< HEAD
+=======
+// ============= alternate way ================
+>>>>>>> f2fab54a1113b908bf24fdf5d2f18003b54f2ed8
+// void selectionSort(vector<int> &arr, int n) {
+//     for(int i = 0; i < n-1; i++) {
+//         for(int j = i+1; j < n; j++) {
+//             if(arr[i] > arr[j]) {
+//                 swap(arr[i], arr[j]);
+//             }
+//         }
+//     }
+// }
+
 void selectionSort(vector<int> &arr, int n) {
-    for(int i = 0; i < n-1; i++) {
-        for(int j = i+1; j < n; j++) {
-            if(arr[i] > arr[j]) {
-                swap(arr[i], arr[j]);
+<<<<<<< HEAD
+    for(int i=0; i<n; i++){
+        int min=arr[i];
+        int minIdx=i;
+        for(int j=i+1; j<n; j++){
+            if(arr[j]<min){
+                minIdx=j;
+                min=arr[j];
             }
         }
+        swap(arr[i],arr[minIdx]);
+=======
+    for(int i = 0; i < n-1; i++) {
+        int minIndex = i;
+        for(int j = i+1; j < n; j++) {
+            if(arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        swap(arr[i], arr[minIndex]);
+>>>>>>> f2fab54a1113b908bf24fdf5d2f18003b54f2ed8
     }
 }
 
@@ -20,25 +49,3 @@ int main() {
     }
     return 0;
 }
-
-
-// #include <bits/stdc++.h>
-// using namespace std;
-
-// int main() {
-//     vector<int> arr = {5, 2, 8, 23, -5, 6, -17};
-    
-//     for(int i = 0; i < arr.size()-1; i++) {
-//         int mn = i;
-//         for(int j = i+1; j < arr.size(); j++) {
-//             if(arr[j] < arr[mn]) mn = j;
-//         }
-//         swap(arr[i], arr[mn]);
-//     }
-    
-//     for(int i = 0; i < arr.size(); i++) {
-//         cout << arr[i] << " ";
-//     }
-    
-//     return 0;
-// }
